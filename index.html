@@ -2,95 +2,205 @@
 <html lang="en">
 <head>
     <style>
-        
+        /* General Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Footer Styles */
+.footer {
+    background-color: #222;
+    color: #fff;
+    padding: 50px 30px;
+    position: relative;
+    overflow: hidden;
+}
 
-.navbar {
+/* Footer Content */
+.footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    background-color: #8bcbe9;
-    padding: 15px 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    animation: fadeIn 1.5s ease-out;
 }
 
+/* Logo */
+.footer-logo a {
+    font-size: 32px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
 
-.logo a {
-    color: rgb(12, 11, 11);
+.footer-logo a:hover {
+    color: #ff9900;
+}
+
+/* About Section */
+.footer-about {
+    width: 30%;
+    padding: 10px;
+    text-align: left;
+}
+
+.footer-about h3 {
+    margin-bottom: 15px;
     font-size: 24px;
+    font-weight: bold;
+}
+
+.footer-about p {
+    font-size: 16px;
+    color: #bbb;
+}
+
+/* Quick Links Section */
+.footer-links {
+    width: 30%;
+    padding: 10px;
+    text-align: left;
+}
+
+.footer-links h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin: 10px 0;
+}
+
+.footer-links ul li a {
+    color: #bbb;
     text-decoration: none;
-}
-      
-.nav-links {
-    list-style-type: none;
-    display: flex;
+    font-size: 16px;
+    transition: color 0.3s;
 }
 
-.nav-links li {
-    margin-left: 20px;
+.footer-links ul li a:hover {
+    color: #ff9900;
 }
 
-.nav-links li a {
-    color: rgb(14, 13, 13);
-    text-decoration: none;
-    font-size: 18px;
+/* Footer Search */
+.footer-search {
+    width: 30%;
+    padding: 10px;
+    text-align: left;
 }
 
+.footer-search h3 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
 
 .search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input {
-    padding: 8px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 4px;
+    padding: 10px;
     font-size: 16px;
+    border: 2px solid #bbb;
+    border-radius: 5px;
+    width: 100%;
+    transition: width 0.3s ease-out, border-color 0.3s ease-out;
 }
 
-.search-bar button {
-    padding: 8px 16px;
-    background-color: #9e9494;
-    color: white;
+.search-bar:focus {
+    width: 100%;
+    border-color: #ff9900;
+    outline: none;
+}
+
+/* Button */
+.footer-search button {
+    padding: 10px 20px;
+    background-color: #ff9900;
     border: none;
-    border-radius: 4px;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.search-bar button:hover {
-    background-color: #444;
+.footer-search button:hover {
+    background-color: #ff6600;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #bbb;
+}
+
+/* Footer Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Navbar with Search Bar</title>
+    <title>Footer with Text, Paragraphs, and Search Bar</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#">My Website</a>
+    <!-- Content goes here -->
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#">MySite</a>
+            </div>
+
+            <!-- About Section -->
+            <div class="footer-about">
+                <h3>About Us</h3>
+                <p>We are a team of passionate developers dedicated to bringing you the best online experience. Our goal is to help you navigate the web seamlessly and find what you need.</p>
+            </div>
+
+            <!-- Quick Links Section -->
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Footer Search -->
+            <div class="footer-search">
+                <h3>Search Our Site</h3>
+                <input type="text" placeholder="Search..." id="searchInput" class="search-bar">
+                <button onclick="searchFunction()">Go</button>
+            </div>
         </div>
-        <ul class="nav-links">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <div class="search-bar">
-            <input type="text" placeholder="Search..." id="searchInput">
-            <button type="button" onclick="searchFunction()">Search</button>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 MySite. All rights reserved.</p>
         </div>
-    </nav>
+    </footer>
 
     <script>
         function searchFunction() {
@@ -98,7 +208,6 @@
             alert('You searched for: ' + searchValue);
         }
     </script>
-    
+
 </body>
 </html>
-
